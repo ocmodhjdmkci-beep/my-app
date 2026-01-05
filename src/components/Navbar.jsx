@@ -1,5 +1,5 @@
 import {
-  Navbar as heronav,
+  Navbar as HeroNavbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
@@ -15,7 +15,7 @@ import {
 
 export default function Navbar() {
   return (
-    <Navbar>
+    <HeroNavbar>
       <NavbarBrand>
         <p className="font-bold text-inherit">ACME</p>
       </NavbarBrand>
@@ -68,7 +68,7 @@ export default function Navbar() {
           </DropdownMenu>
         </Dropdown>
       </NavbarContent>
-    </Navbar>
+    </HeroNavbar>
   );
 }
 
