@@ -1,29 +1,29 @@
-import { Children, useState } from 'react'
+import { children, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import Navbar from './components/Navbar'
 import './App.css'
+import {HeroUIProvider} from "@heroui/react";
+import Login from './components/Login';
+import Register from './components/Register';
+import Layaut from './components/Layaut';
+import {createBrowserRouter,RouterProvider} from "react-router-dom"
+import Home from './components/Home';
+import { CounteContextProvider } from './Context';
 
-
-import Footer from './components/Footer'
-import Portfolio from './components/Portfolio'
-import About from './components/About'
-import Contact from './components/Contact'
-import Home from './components/Home'
-import Layaut from './components/Layaut'
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 let route = createBrowserRouter([
-  {path:'' , element:<Layaut/> , children:[
-    {index:true , element:<Home/>},
-    {path:'about' , element:<About/>},
-    {path:'portfolio' , element:<Portfolio/>},
-    {path:'contact' , element:<Contact/>},
-  ]},
-  
+  {path:'/' , element:<Layaut/> , children:[
+    {index:true, element:<Login/>},
+    {path:'/register' , element:<Register/>},
+    {path:'/home' , element:<Home/>},
+  ]}
 ])
 function App() {
   return <>
-    <RouterProvider router={route}/>
+  <HeroUIProvider>
+     <CounteContextProvider>
+       <RouterProvider router={route}/>
+     </CounteContextProvider>
+  </HeroUIProvider>
   </>
 }
 

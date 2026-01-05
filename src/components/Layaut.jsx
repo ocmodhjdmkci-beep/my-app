@@ -4,9 +4,9 @@ import Navbar from './Navbar';
 import { Outlet } from 'react-router-dom';
 
 export default function Layaut() {
-  return<>
-  <Navbar/>
-  <Outlet />
-  <Footer/>
+  return <>
+    <Navbar/>
+    <Outlet/>
+    <Footer/>
   </>
 }
